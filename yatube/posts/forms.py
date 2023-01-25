@@ -11,5 +11,5 @@ class PostForm(ModelForm):
     def clean_text(self):
         data = self.cleaned_data['text']
         if len(data) == 0:
-            raise forms.ValidationError('пустая форма')
+            raise forms.ValidationError('Пустая форма')
         return data

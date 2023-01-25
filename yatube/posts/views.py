@@ -1,7 +1,6 @@
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render, redirect
-from django.urls import reverse
 from .models import Group, Post
 from .forms import PostForm
 from users.forms import User
@@ -82,6 +81,7 @@ def post_create(request):
             return redirect("posts:profile", post.author)
         return render(request, template, context)
     return render(request, template, context)
+
 
 @login_required
 def post_edit(request, post_id):
